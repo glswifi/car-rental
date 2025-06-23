@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GLS car rental </title>
+  <title>CAR RENTAL</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     * {
@@ -17,7 +17,6 @@
       padding-top: 60px;
     }
 
-    /* Header */
     header {
       position: fixed;
       top: 0;
@@ -46,51 +45,7 @@
       font-size: 1.5em;
     }
 
-    /* Collection Layout */
-    .collections {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
-    }
 
-    .product-card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      width: 90%;
-      max-width: 300px;
-      padding: 15px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .product-card:hover {
-      transform: scale(1.03);
-    }
-
-    .product-image {
-      width: 100%;
-      height: 150px;
-      object-fit: contain;
-      margin-bottom: 10px;
-    }
-
-    .product-name {
-      font-weight: bold;
-      font-size: 1.1em;
-      margin: 10px 0 5px 0;
-      color: #222;
-    }
-
-    .product-desc {
-      font-size: 0.9em;
-      color: #555;
-      min-height: 40px;
-    }
-
-    /* WhatsApp Floating */
     .whatsapp-float {
       position: fixed;
       bottom: 70px;
@@ -112,7 +67,9 @@
       background-color: #20b358;
     }
 
-    /* Footer */
+    .cart-float:hover {
+      background-color: #e68900;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -131,46 +88,184 @@
     .social-icons a:hover {
       color: #000;
     }
+
+    .collections.horizontal {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      align-items: center;
+    }
+
+    .horizontal-card {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      max-width: 800px;
+      width: 100%;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 600px) {
+      .horizontal-card {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .image-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .info-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .thumbnail-row {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .thumb {
+      width: 60px;
+      height: 45px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border 0.2s;
+    }
+
+    .thumb:hover {
+      border: 2px solid #4CAF50;
+    }
+
+    .product-image {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+
+    .product-name {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .product-desc {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #4CAF50;
+      margin-bottom: 10px;
+    }
+
+    .detail-btn {
+      width: fit-content;
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+      cursor: pointer;
+      border: none;
+      font-size: 1em;
+    }
+
+    .detail-btn:hover {
+      background-color: #388e3c;
+    }
+
+    /* Image zoom overlay */
+    .image-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .image-overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      box-shadow: 0 0 20px #fff;
+      border-radius: 10px;
+      cursor: zoom-out;
+    }
+
   </style>
+
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <i class="fas fa-store icon-left"></i>
-    <div class="header-content">Welcome to GLS car rental </div>
+    <div class="header-content">Welcome to GLS Car Rental</div>
   </header>
 
-  <!-- Main Content -->
-  <div class="collections">
-    <div class="product-card">
-      <a href="https://glswifi.github.io/kinfood/Clothing">
-        <img class="product-image" src="https://i.imgur.com/Tiodx4b.jpg" alt="Habillement" />
-      </a>
-      <div class="product-name">Habillement</div>
-      <div class="product-desc">Les événements les plus formels, costume de ville trois pièces avec une chemise unie et une cravate.</div>
+  <div class="collections horizontal">
+    <div class="product-card horizontal-card">
+      <div class="image-section">
+        <img src="https://i.imgur.com/k8Vv425.jpg" class="product-image main-img" alt="Montre Classique" />
+        <div class="thumbnail-row">
+          <img src="https://i.imgur.com/rjROC85.jpg" class="thumb" data-main="https://i.imgur.com/rjROC85.jpg" alt="Vue 1A" />
+          <img src="https://i.imgur.com/k8Vv425.jpg" class="thumb" data-main="https://i.imgur.com/k8Vv425.jpg" alt="Vue 1B" />
+        </div>
+      </div>
+      <div class="info-section">
+        <div class="product-name">Montre Classique</div>
+        <div class="product-desc">Montre en acier inoxydable avec bracelet en cuir véritable. Élégante et robuste.</div>
+        <div class="product-price">Prix : 59,99 €</div>
+        <button class="detail-btn">Ajouter au panier</button>
+      </div>
     </div>
 
-    <div class="product-card">
-      <a href="https://glswifi.github.io/kinfood/Electronic">
-        <img class="product-image" src="https://imgur.com/yZoXKyX.jpg" alt="Électronique" />
-      </a>
-      <div class="product-name">Appareils électroniques</div>
-      <div class="product-desc">Télévision, lecteur DVD, appareil photo, ordinateur, téléphone, photocopieur, projecteur…</div>
+    <div class="product-card horizontal-card">
+      <div class="image-section">
+        <img src="https://via.placeholder.com/300x200?text=Produit+2" class="product-image main-img" alt="Chemise Slim Fit" />
+        <div class="thumbnail-row">
+          <img src="https://via.placeholder.com/80x60?text=2A" class="thumb" data-main="https://via.placeholder.com/300x200?text=Produit+2" alt="Vue 2A" />
+          <img src="https://via.placeholder.com/80x60?text=2B" class="thumb" data-main="https://via.placeholder.com/300x200?text=Produit+2" alt="Vue 2B" />
+        </div>
+      </div>
+      <div class="info-section">
+        <div class="product-name">Chemise Slim Fit</div>
+        <div class="product-desc">Chemise blanche en coton 100%, coupe slim pour un style moderne.</div>
+        <div class="product-price">Prix : 39,90 €</div>
+        <button class="detail-btn">Ajouter au panier</button>
+      </div>
     </div>
   </div>
 
-  <!-- Cart Floating Button -->
-  <a class="cart-float" href="https://glswifi.github.io/kinfood/Cart" title="Voir le panier">
-    <i class="fas fa-shopping-cart"></i>
-  </a>
-
-  <!-- WhatsApp Button -->
-  <a class="whatsapp-float" href="https://wa.me/243829353222" target="_blank">
+  <a href="https://wa.me/243829353222" target="_blank" class="whatsapp-float" aria-label="Contact WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-<!-- Footer -->
 <footer>
   <div class="social-icons">
     <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
@@ -180,6 +275,43 @@
   <h5>&copy; 2025 par GLS SMARTHOME Tous droits réservés.</h5>
 </footer>
 
+  <!-- Image Zoom Overlay -->
+  <div id="imageOverlay" class="image-overlay" role="dialog" aria-modal="true" aria-label="Agrandir l'image">
+    <img src="" alt="" />
+  </div>
+
+  <script>
+
+    // Thumbnail image switch
+    document.querySelectorAll('.thumbnail-row').forEach(row => {
+      row.addEventListener('click', e => {
+        if (e.target.classList.contains('thumb')) {
+          const mainImg = row.closest('.image-section').querySelector('.main-img');
+          mainImg.src = e.target.dataset.main;
+          mainImg.alt = e.target.alt;
+        }
+      });
+    });
+
+    // Image zoom overlay
+    const imageOverlay = document.getElementById('imageOverlay');
+    const overlayImg = imageOverlay.querySelector('img');
+
+    document.querySelectorAll('.product-image').forEach(img => {
+      img.addEventListener('click', () => {
+        overlayImg.src = img.src;
+        overlayImg.alt = img.alt;
+        imageOverlay.style.display = 'flex';
+        // Trap focus inside overlay if needed (for accessibility)
+      });
+    });
+
+    imageOverlay.addEventListener('click', () => {
+      imageOverlay.style.display = 'none';
+      overlayImg.src = '';
+      overlayImg.alt = '';
+    });
+  </script>
 
 </body>
 </html>
