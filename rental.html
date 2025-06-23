@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Welcome to GLS car rental </title>
+  <title>GLS car rental </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     * {
@@ -44,42 +44,6 @@
     .icon-left {
       color: #4CAF50;
       font-size: 1.5em;
-    }
-
-    .hamburger {
-      font-size: 1.5em;
-      color: #333;
-      cursor: pointer;
-    }
-
-    /* Sidebar for mobile */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 220px;
-      height: 100%;
-      background: #fff;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.15);
-      padding-top: 60px;
-      transition: left 0.3s ease;
-      z-index: 1000;
-    }
-
-    .sidebar.open {
-      left: 0;
-    }
-
-    .sidebar a {
-      display: block;
-      padding: 15px 20px;
-      color: #333;
-      text-decoration: none;
-      border-bottom: 1px solid #eee;
-    }
-
-    .sidebar a:hover {
-      background-color: #f0f0f0;
     }
 
     /* Collection Layout */
@@ -148,27 +112,6 @@
       background-color: #20b358;
     }
 
-    /* Cart Floating Button */
-    .cart-float {
-      position: fixed;
-      bottom: 150px;
-      right: 20px;
-      background-color: #ff9800;
-      color: white;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 22px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      z-index: 999;
-    }
-
-    .cart-float:hover {
-      background-color: #e68900;
-    }
     /* Footer */
     footer {
       text-align: center;
@@ -195,17 +138,8 @@
   <!-- Header -->
   <header>
     <i class="fas fa-store icon-left"></i>
-    <div class="header-content">Nos Collections</div>
-    <i class="fas fa-bars hamburger" id="hamburgerBtn"></i>
+    <div class="header-content">Welcome to GLS car rental </div>
   </header>
-
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <a href="https://glswifi.github.io/kinfood/MainPage">Accueil</a>
-  <a href="https://glswifi.github.io/kinfood/Clothing">Habillement</a>
-  <a href="https://glswifi.github.io/kinfood/Electronic">Électronique</a>
-  <a href="https://glswifi.github.io/kinfood/Contact">Contact</a>
-</div>
 
   <!-- Main Content -->
   <div class="collections">
@@ -246,23 +180,6 @@
   <h5>&copy; 2025 par GLS SMARTHOME Tous droits réservés.</h5>
 </footer>
 
-
-  <!-- Sidebar Toggle Script -->
-  <script>
-    const sidebar = document.getElementById('sidebar');
-    const hamburger = document.getElementById('hamburgerBtn');
-
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-    });
-
-    // Optional: click outside sidebar to close (for mobile UX)
-    window.addEventListener('click', (e) => {
-      if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
-        sidebar.classList.remove('open');
-      }
-    });
-  </script>
 
 </body>
 </html>
